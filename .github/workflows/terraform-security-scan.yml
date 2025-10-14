@@ -37,6 +37,8 @@ jobs:
           done
 
   security-scan:
+    permissions:
+      actions: read
     name: "Trivy Security Scan"
     needs: terraform-validation
     runs-on: ubuntu-latest

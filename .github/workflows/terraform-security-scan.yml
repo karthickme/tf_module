@@ -1,4 +1,7 @@
 name: "Terraform Validation & Security Scan"
+permissions:
+  contents: read
+  security-events: write
 
 on:
   pull_request:
@@ -43,7 +46,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
